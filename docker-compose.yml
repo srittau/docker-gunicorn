@@ -1,5 +1,8 @@
 version: '3'
 services:
-  web:
+  py37:
     image: srittau/gunicorn:3.7
+    build: .
+  latest:
+    image: srittau/gunicorn:latest
     build: .
