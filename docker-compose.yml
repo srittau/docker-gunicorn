@@ -1,0 +1,5 @@
+version: '3'
+services:
+  web:
+    image: srittau/gunicorn:3.7
+    build: .
