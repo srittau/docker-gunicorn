@@ -1,8 +1,8 @@
-FROM python:3.6-stretch
+FROM python:3.7-stretch
 
 # Prepare virtualenv
 RUN mkdir /app
-RUN python3.6 -m venv /app/virtualenv
+RUN python3.7 -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
 
 # Install requirements
