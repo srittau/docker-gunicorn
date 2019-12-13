@@ -1,8 +1,11 @@
-FROM python:3.7-buster
+ARG pyversion=3.8
+FROM python:${pyversion}-buster
+ARG pyversion=3.8
+ENV PYVERSION ${pyversion:-3.8}
 
 # Prepare virtualenv
 RUN mkdir /app
-RUN python3.7 -m venv /app/virtualenv
+RUN python -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
 
 # Install requirements
