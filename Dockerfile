@@ -15,4 +15,4 @@ ONBUILD RUN /app/virtualenv/bin/pip install -q -r /app/requirements.txt
 # Run gunicorn
 WORKDIR /app
 EXPOSE 80
-ENTRYPOINT ["/app/virtualenv/bin/gunicorn", "--capture-output", "--access-logfile=-", "--error-logfile=-", "--workers=4", "-b", ":80"]
+ENTRYPOINT ["/app/virtualenv/bin/gunicorn", "--chdir", "/app", "--capture-output", "--access-logfile=-", "--error-logfile=-", "--workers=4", "-b", ":80"]
