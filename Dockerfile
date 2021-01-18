@@ -10,7 +10,7 @@ RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
 
 # Install requirements
 ONBUILD COPY ./requirements.txt /app/requirements.txt
-ONBUILD RUN /app/virtualenv/bin/pip install -q -r /app/requirements.txt
+ONBUILD RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /app/requirements.txt
 
 # Run gunicorn
 WORKDIR /app
