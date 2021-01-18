@@ -7,6 +7,7 @@ ENV PYVERSION ${pyversion:-3.9}
 RUN mkdir /app
 RUN python -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
+COPY ./run-gunicorn.sh /app/run-gunicorn.sh
 
 # Install requirements
 ONBUILD COPY ./requirements.txt /app/requirements.txt
@@ -15,4 +16,4 @@ ONBUILD RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /a
 # Run gunicorn
 WORKDIR /app
 EXPOSE 80
-ENTRYPOINT ["/app/virtualenv/bin/gunicorn", "--chdir", "/app", "--capture-output", "--access-logfile=-", "--error-logfile=-", "--workers=4", "-b", ":80"]
+ENTRYPOINT ["/bin/bash", "/app/run-gunicorn.sh"]
