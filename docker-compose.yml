@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        - pyversion=3.8
+        - pyversion=3.9
   py38:
     image: srittau/gunicorn:3.8
     build:
