@@ -4,7 +4,7 @@ ARG pyversion=3.9
 ENV PYVERSION ${pyversion:-3.9}
 
 # Prepare virtualenv
-RUN mkdir /app
+RUN mkdir -p /app/log
 RUN python -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
 COPY ./run-gunicorn.sh /app/run-gunicorn.sh

@@ -11,6 +11,12 @@ packages listed there are installed into the generated container.
 The number of works to start can be configured using the `GUNICORN_WORKERS`
 environment variable. It defaults to 4.
 
+The gunicorn logs are written to stdout, but also stored in two files
+in `/app/log` inside the container. By default, those are named
+`access.log` and `error.log`, but a prefix can be configured using the
+`LOG_PREFIX` environment variable. This allows multiple containers to
+share a volume.
+
 ## Example Dockerfile
 
 Suppose your application lives in `src/flubber` and you have a package
