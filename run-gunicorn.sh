@@ -2,6 +2,8 @@
 
 set -e
 
+touch /app/log/${LOG_PREFIX}access.log
+touch /app/log/${LOG_PREFIX}error.log
 tail --pid $$ -F /app/log/${LOG_PREFIX}access.log &
 tail --pid $$ -F /app/log/${LOG_PREFIX}error.log &
 exec /app/virtualenv/bin/gunicorn \
