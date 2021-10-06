@@ -1,7 +1,7 @@
-ARG pyversion=3.9
+ARG pyversion=3.10
 FROM python:${pyversion}-bullseye
-ARG pyversion=3.9
-ENV PYVERSION ${pyversion:-3.9}
+ARG pyversion=3.10
+ENV PYVERSION ${pyversion:-3.10}
 
 # Prepare virtualenv
 RUN mkdir -p /app/log
