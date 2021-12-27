@@ -12,6 +12,5 @@ exec /app/virtualenv/bin/gunicorn \
     --access-logfile=/app/log/${LOG_PREFIX}access.log \
     --error-logfile=/app/log/${LOG_PREFIX}error.log \
     --workers=${GUNICORN_WORKERS:-4} \
-    -b \
-    :80 \
+    --bind=:80 \
     "$@"
