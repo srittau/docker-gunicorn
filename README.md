@@ -8,7 +8,7 @@ packages listed there are installed into the generated container.
 
 ## Configuration
 
-The number of works to start can be configured using the `GUNICORN_WORKERS`
+The number of workers to start can be configured using the `GUNICORN_WORKERS`
 environment variable. It defaults to 4.
 
 The gunicorn logs are written to stdout, but also stored in two files
