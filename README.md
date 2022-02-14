@@ -3,9 +3,6 @@
 A docker base container that contains Python and runs a gunicorn
 application server.
 
-If a `requirements.txt` file exists in the top-level directory, the
-packages listed there are installed into the generated container.
-
 ## Configuration
 
 The number of workers to start can be configured using the `GUNICORN_WORKERS`
@@ -26,6 +23,8 @@ running that application:
 
 ```
 FROM srittau/gunicorn:latest
+COPY ./requirements.txt /app/requirements.txt
+RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /app/requirements.txt
 COPY ./src/flubber /app/flubber
 CMD ["flubber.app"]
 ```

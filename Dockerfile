@@ -9,10 +9,6 @@ RUN python -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools "gunicorn>=20,<21"
 COPY ./run-gunicorn.sh /app/run-gunicorn.sh
 
-# Install requirements
-ONBUILD COPY ./requirements.txt /app/requirements.txt
-ONBUILD RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /app/requirements.txt
-
 # Run gunicorn
 WORKDIR /app
 EXPOSE 80
