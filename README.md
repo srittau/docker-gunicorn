@@ -26,5 +26,6 @@ FROM srittau/gunicorn:latest
 COPY ./requirements.txt /app/requirements.txt
 RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /app/requirements.txt
 COPY ./src/flubber /app/flubber
+RUN python -m compileall /app
 CMD ["flubber.app"]
 ```
