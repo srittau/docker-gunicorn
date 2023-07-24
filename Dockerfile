@@ -1,5 +1,5 @@
 ARG pyversion=3.11
-FROM python:${pyversion}-bullseye
+FROM python:${pyversion}-bookworm
 ARG pyversion=3.11
 ENV PYVERSION ${pyversion:-3.11}
 
