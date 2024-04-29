@@ -1,4 +1,3 @@
-version: '3'
 services:
   py311:
     image: srittau/gunicorn:3.11
