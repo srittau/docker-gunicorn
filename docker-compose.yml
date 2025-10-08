@@ -1,13 +1,25 @@
 services:
-  py311:
-    image: srittau/gunicorn:3.11
+  py314:
+    image: srittau/gunicorn:3.14
     build:
       context: .
       args:
-        - pyversion=3.11
+        - pyversion=3.14
+  py313:
+    image: srittau/gunicorn:3.13
+    build:
+      context: .
+      args:
+        - pyversion=3.13
+  py312:
+    image: srittau/gunicorn:3.12
+    build:
+      context: .
+      args:
+        - pyversion=3.12
   latest:
     image: srittau/gunicorn:latest
     build:
       context: .
       args:
-        - pyversion=3.11
+        - pyversion=3.14

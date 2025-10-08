@@ -1,7 +1,7 @@
-ARG pyversion=3.11
-FROM python:${pyversion}-bookworm
-ARG pyversion=3.11
-ENV PYVERSION ${pyversion:-3.11}
+ARG pyversion=3.14
+FROM python:${pyversion}
+ARG pyversion=3.14
+ENV PYVERSION ${pyversion:-3.14}
 
 # Prepare virtualenv
 RUN mkdir -p /app/log
