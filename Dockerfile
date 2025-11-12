@@ -6,7 +6,7 @@ ENV PYVERSION ${pyversion:-3.14}
 # Prepare virtualenv
 RUN mkdir -p /app/log
 RUN python -m venv /app/virtualenv
-RUN /app/virtualenv/bin/pip install --upgrade pip setuptools "gunicorn>=20,<21"
+RUN /app/virtualenv/bin/pip install --upgrade pip setuptools gunicorn
 COPY ./run-gunicorn.sh /app/run-gunicorn.sh
 
 # Run gunicorn
